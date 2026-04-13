@@ -149,7 +149,7 @@ video {
 /* Hover color */
 .navbar-nav .nav-link:hover {
     color: #00c6ff !important;
-     transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
 /* Underline animation */
@@ -391,8 +391,6 @@ video {
 /* HERO */
 .hero {
     height: calc(100vh - 70px);
-    margin-top: 70px;
-
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
         url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
 
@@ -579,14 +577,10 @@ video {
 
 /* ===== FIX NAVBAR OVERLAP ===== */
 .main-content {
-    padding-top: 140px;
+    margin-top: 80px;
     /* pushes content below navbar */
 }
 
-/* ===== REMOVE BOOTSTRAP WIDTH LIMIT ===== */
-.container {
-    max-width: 1100px !important;
-}
 
 /* ===== CENTER CONTENT PROPERLY ===== */
 .page-wrapper {
