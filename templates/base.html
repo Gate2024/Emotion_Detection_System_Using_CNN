@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Emotion AI</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</head>
+
+<body>
+
+    <!-- 🔥 NAVBAR -->
+    <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="/">🧠 EmotionAI</a>
+
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/detect">Diagnosis</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+    <div class="side-social">
+        <a href="https://www.instagram.com/narayan_adhude0106?igsh=MXBjeWVrc3Awbm4yYQ=="><i
+                class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100070360385842&mibextid=ZbWKwL"><i
+                class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/AdhudeNarayan?t=vTUikqsTWQrR54t0SnnC5w&s=09"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com/@narayanadhude2004?si=NoZVCBfMTwdtn_Qg"><i class="fab fa-youtube"></i></a>
+        <a href="www.linkedin.com/in/narayan-adhude-🎯-5b14081bb"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    </div>
+
+    <!-- 🔥 FOOTER -->
+    <footer class="premium-footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <h4 class="footer-logo">🧠 EmotionAI</h4>
+                    <p class="footer-text">
+                        AI-powered emotion detection system using deep learning.
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/detect">Diagnosis</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <h5>Follow Me</h5>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/narayan_adhude0106?igsh=MXBjeWVrc3Awbm4yYQ=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100070360385842&mibextid=ZbWKwL"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/AdhudeNarayan?t=vTUikqsTWQrR54t0SnnC5w&s=09"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/@narayanadhude2004?si=NoZVCBfMTwdtn_Qg"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="www.linkedin.com/in/narayan-adhude-🎯-5b14081bb"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr>
+            <p class="text-center">© 2026 EmotionAI By Narayan Adhude</p>
+
+        </div>
+
+    </footer>
+    <script>
+        window.addEventListener("scroll", function () {
+            let navbar = document.querySelector(".custom-navbar");
+            navbar.classList.toggle("scrolled", window.scrollY > 50);
+        });
+    </script>
+
+    <!-- GLOBAL LOADER -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    <script>
+        function showLoader() {
+            document.getElementById("loader").style.display = "flex";
+        }
+
+        function hideLoader() {
+            document.getElementById("loader").style.display = "none";
+        }
+
+        // 🔥 FOR LINKS
+        document.addEventListener("click", function (e) {
+            if (e.target.tagName === "A") {
+                showLoader();
+            }
+        });
+
+        // 🔥 FOR FORMS
+        document.addEventListener("submit", function () {
+            showLoader();
+        });
+
+        // Hide when page fully loads
+        window.onload = hideLoader;
+    </script>
+</body>
+
+</html>

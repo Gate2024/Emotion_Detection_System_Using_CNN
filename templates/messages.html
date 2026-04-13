@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
+
+<div class="messages-wrapper">
+
+    <h1 class="messages-title">📩 User Messages</h1>
+
+    <div class="messages-card">
+
+        <table class="message-table">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for msg in messages %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ msg.name }}</td>
+                    <td>{{ msg.mobile }}</td>
+                    <td>{{ msg.email }}</td>
+                    <td class="msg-text">{{ msg.message }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

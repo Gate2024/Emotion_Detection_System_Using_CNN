@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
+<h1 class="page-title">🧠 Emotion Detection</h1>
+<div class="page-wrapper">
+    
+    <div class="container">
+
+        <!-- LEFT SIDE -->
+        <div class="card">
+
+            <h2>📤 Upload Image</h2>
+
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <button class="upload-btn">Predict</button>
+            </form>
+
+            <hr>
+
+            <h2>📸 Camera</h2>
+
+            <button class="camera-btn" onclick="startCamera()">Open Camera</button>
+
+            <video id="video" autoplay style="display:none;"></video>
+
+            <button type="button" id="captureBtn" class="capture-btn" style="display:none;" onclick="capture()">
+                Capture & Predict
+            </button>
+
+            <canvas id="canvas" style="display:none;"></canvas>
+
+            <form method="POST" enctype="multipart/form-data" id="cameraForm">
+                <input type="hidden" name="image" id="imageData">
+            </form>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="card">
+
+            <h2>📊 Result</h2>
+
+            {% if image_path %}
+            <img src="{{ image_path }}" class="result-img">
+            {% endif %}
+
+            {% if result %}
+            {% if result == "Invalid / No Face" %}
+            <h2 style="color:red;">❌ Invalid Image</h2>
+            {% else %}
+            <div class="emotion">😊 {{ result.upper() }}</div>
+            {% endif %}
+
+            <div class="confidence">Confidence: {{ confidence }}%</div>
+            {% else %}
+            <p style="opacity:0.6;">Upload or capture image to see result</p>
+            {% endif %}
+
+        </div>
+
+    </div>
+</div>
+<script>
+    let videoStream = null;
+
+    function startCamera() {
+        const video = document.getElementById('video');
+        const captureBtn = document.getElementById('captureBtn');
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+                video.style.display = "block";
+                captureBtn.style.display = "block";
+                videoStream = stream;
+            });
+    }
+
+    function capture() {
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+
+        canvas.width = 300;
+        canvas.height = 300;
+
+        context.drawImage(video, 0, 0, 300, 300);
+
+        const dataURL = canvas.toDataURL('image/jpeg', 0.6);
+
+        document.getElementById('imageData').value = dataURL;
+
+        if (videoStream) {
+            videoStream.getTracks().forEach(track => track.stop());
+        }
+
+        document.getElementById('cameraForm').submit();
+    }
+</script>
+
+{% endblock %}

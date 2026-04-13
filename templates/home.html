@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Emotion AI</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</head>
+
+<body>
+
+    <!-- 🔥 HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Emotion Detection System</h1>
+            <p>Analyze human emotions using Deep Learning & Computer Vision</p>
+            <a href="/detect" class="btn btn-main">Start Detection</a>
+        </div>
+    </section>
+
+    <section class="how-section">
+
+        <h2 class="section-title">✨ How It Works</h2>
+
+        <div class="how-container">
+
+            <div class="how-card" onclick="location.href='/detect'" style="cursor:pointer;">
+                <div class="icon">📤</div>
+                <h4>Upload Image</h4>
+                <p>Select or capture a face image</p>
+                <span class="step">Step 1</span>
+            </div>
+
+            <div class="how-card" onclick="location.href='/detect'" style="cursor:pointer;">
+                <div class="icon">🧠</div>
+                <h4>AI Analysis</h4>
+                <p>CNN model analyzes facial expressions</p>
+                <span class="step">Step 2</span>
+            </div>
+
+            <div class="how-card" onclick="location.href='/detect'" style="cursor:pointer;">
+                <div class="icon">📊</div>
+                <h4>Get Result</h4>
+                <p>Emotion + confidence score displayed</p>
+                <span class="step">Step 3</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
+{% endblock %}

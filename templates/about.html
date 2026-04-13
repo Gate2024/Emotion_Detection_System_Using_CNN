@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
+
+<div class="about-page">
+
+    <!-- HERO -->
+    <section class="about-hero">
+        <h1>🧠 AI-Powered Emotion Detection</h1>
+        <p>Understanding human emotions using deep learning & computer vision</p>
+        <a href="/detect" class="cta-btn">Start Detection →</a>
+    </section>
+
+    <!-- PROBLEM + SOLUTION -->
+    <section class="about-grid">
+
+        <div class="about-card">
+            <h2>🚨 Problem Statement</h2>
+            <p>
+                Human emotions are complex and difficult for machines to interpret.
+                Traditional systems lack the ability to understand facial expressions accurately.
+            </p>
+            <ul class="negative">
+                <li>❌ No real-time emotion understanding</li>
+                <li>❌ Manual analysis required</li>
+                <li>❌ Low accuracy in detection</li>
+                <li>❌ No scalable AI solutions</li>
+            </ul>
+        </div>
+
+        <div class="about-card">
+            <h2>💡 Proposed Solution</h2>
+            <p>
+                EmotionAI uses CNN-based deep learning models to detect emotions from facial images
+                with high accuracy in real-time.
+            </p>
+            <ul class="positive">
+                <li>✅ Real-time emotion detection</li>
+                <li>✅ CNN-based prediction</li>
+                <li>✅ High accuracy</li>
+                <li>✅ Camera + Upload support</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- VISION & MISSION -->
+    <section class="about-grid">
+
+        <div class="about-card">
+            <h2>🎯 Vision</h2>
+            <p>
+                To build intelligent systems that can understand human emotions and enhance
+                human-computer interaction using AI.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h2>🚀 Mission</h2>
+            <p>
+                To develop accurate, fast, and scalable emotion detection systems using
+                deep learning and deploy them in real-world applications.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="about-card full">
+        <h2>⚙️ Tech Stack</h2>
+        <div class="tech-grid">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>TensorFlow</span>
+            <span>OpenCV</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+        </div>
+    </section>
+
+    <!-- DEVELOPER -->
+    <section class="about-card full highlight">
+        <h2>👨‍💻 Developer</h2>
+        <p>
+            Developed by <strong>Narayan Adhude</strong>, a final-year Computer Science Engineering student
+            passionate about AI/ML and Full Stack Development.
+        </p>
+    </section>
+
+</div>
+
+{% endblock %}

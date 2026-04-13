@@ -1,0 +1,30 @@
+/* ===== DASHBOARD CARD ===== */
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ===== STATS ===== */
+.stat {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ===== HISTORY TABLE ===== */
+.table {
+    background-color: #1e1e2f;
+    color: white;
+}
+
+/* ===== TABLE ROW HOVER ===== */
+.table tr:hover {
+    background-color: #2c2c44;
+}
+
+/* ===== CHART SECTION ===== */
+.chart {
+    margin-top: 20px;
+}

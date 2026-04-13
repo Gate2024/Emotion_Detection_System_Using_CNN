@@ -1,0 +1,29 @@
+/* ===== VIDEO FEED ===== */
+video {
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid #00c9ff;
+    margin-top: 15px;
+}
+
+/* ===== CAPTURE BUTTON ===== */
+.capture-btn {
+    margin-top: 15px;
+    background: linear-gradient(45deg, #ff512f, #dd2476);
+    border: none;
+    font-weight: bold;
+}
+
+.capture-btn:hover {
+    transform: scale(1.08);
+}
+
+/* ===== CANVAS ===== */
+canvas {
+    display: none;
+}
+
+/* ===== CAMERA SECTION ===== */
+.camera-section {
+    margin-top: 25px;
+}

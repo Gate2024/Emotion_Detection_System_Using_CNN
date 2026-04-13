@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, msg in messages %}
+<div class="flash {{ category }}">
+    {{ msg }}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<div class="login-wrapper">
+
+    <div class="login-card">
+
+        <h2 class="login-title">🔐 Admin Login</h2>
+
+        <form method="POST">
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter username" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+
+        </form>
+
+    </div>
+
+</div>
+<script>
+    setTimeout(() => {
+        document.querySelectorAll(".flash").forEach(el => {
+            el.style.transition = "0.5s";
+            el.style.opacity = "0";
+            setTimeout(() => el.remove(), 500);
+        });
+    }, 3000); // 3 seconds
+</script>
+{% endblock %}
