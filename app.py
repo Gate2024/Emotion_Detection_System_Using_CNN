@@ -8,7 +8,7 @@ import base64
 import cv2
 from flask import flash, redirect,session, url_for, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 app.secret_key = "EmotionDetectionSecretKey"  # ✅ MUST ADD (VERY IMPORTANT)
 # Upload folder
 UPLOAD_FOLDER = "static/uploads"
@@ -179,7 +179,10 @@ def login():
 @app.route('/home')
 def home_page():
     return render_template('home.html')
-import os
+
+@app.route("/test-css")
+def test_css():
+    return app.send_static_file("css/index.css")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
