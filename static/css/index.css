@@ -746,14 +746,14 @@ button {
 
 /* FIX GRID */
 .row {
-    display: flex;
+    
     flex-wrap: wrap;
     gap: 30px;
 }
 
 /* COLUMN FIX */
 .col-md-6 {
-    flex: 1;
+  
     min-width: 300px;
 }
 
